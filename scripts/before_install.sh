@@ -1,2 +1,2 @@
 #!/bin/bash
-rm -rf /usr/share/tomcat8/webapps/ccdemo*
+docker pull 173437313385.dkr.ecr.ap-south-1.amazonaws.com/test:latest
