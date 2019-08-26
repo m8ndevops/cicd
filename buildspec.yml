@@ -28,6 +28,6 @@ phases:
 artifacts:
     files: 
       - 'imagedefinitions.json'
-      - 'docker-compose.yml'
+      - 'docker/docker-compose.yml'
       - 'appspec.yml'
       - 'docker.sh'
