@@ -27,5 +27,7 @@ phases:
       - cat imagedefinitions.json
 artifacts:
     files: 
-      - imagedefinitions.json
-      - docker-compose.yml
+      - 'imagedefinitions.json'
+      - 'docker-compose.yml'
+      - 'appspec.yml'
+      - 'docker.sh'
