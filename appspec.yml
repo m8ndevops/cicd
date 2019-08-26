@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 hooks: # Deploy life cycle events
-  Services:
+  BeforeInstall:
     - location: ./docker.sh
       timeout: 300
       runas: root
