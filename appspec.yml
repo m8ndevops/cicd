@@ -2,11 +2,11 @@ version: 0.0
 os: linux
 
 files:
-  - source: ./docker-compose.yml
-    destination: /opt/codedeploy-agent
+  - source: docker-compose.yml
+    destination: /usr/share
 hooks: # Deploy life cycle events
   BeforeInstall:
-    - location: ./docker.sh
+    - location: docker.sh
       timeout: 300
 #  BeforeInstall:
 #    - location: scripts/before_install.sh
