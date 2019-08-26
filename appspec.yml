@@ -1,8 +1,8 @@
 version: 0.0
 os: linux
 files:
-  - source: docker-compose.yml
-    destination: /root/
+  - source: ./docker-compose.yml
+    destination: /home/ubuntu
 hooks: # Deploy life cycle events
   BeforeInstall:
     - location: ./docker.sh
