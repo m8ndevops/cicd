@@ -8,8 +8,8 @@ os: linux
 #  - source: docker/docker-compose.yml
 #    destination: /home/ubuntu
 files:
-  - source: docker/docker-compose.yml
-    destination: /home/ubuntu/dockerfile
+  - source: docker
+    destination: /home/ubuntu/docker-compose.yml
 hooks: # Deploy life cycle events
   BeforeInstall:
     - location: docker.sh
