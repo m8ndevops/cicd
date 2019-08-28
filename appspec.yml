@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: docker/*
+  - source: docker
     destination: /home/ubuntu
 hooks: # Deploy life cycle events
   BeforeInstall:
