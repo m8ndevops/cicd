@@ -7,6 +7,7 @@ hooks: # Deploy life cycle events
   BeforeInstall:
     - location: docker.sh
       timeout: 300
+      runas: root
 #  BeforeInstall:
 #    - location: scripts/before_install.sh
 #      timeout: 300
