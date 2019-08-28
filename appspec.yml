@@ -5,7 +5,7 @@ os: linux
 #    destination: /opt/codedeploy-agent
 files:
   - source: docker/docker-compose.yml
-    destination: /opt/codedeploy-agent
+    destination: /home/ubuntu
 #hooks: # Deploy life cycle events
 #  BeforeInstall:
 #    - location: docker.sh
