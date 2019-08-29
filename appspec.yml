@@ -9,11 +9,11 @@ os: linux
 #    destination: /home/ubuntu
 files:
   - source: docker/docker-compose.yml
-    destination: /home/ubuntu/
-hooks: # Deploy life cycle events
-  BeforeInstall:
-    - location: docker.sh
-      timeout: 300
+    destination: /opt/codedeploy-agent
+#hooks: # Deploy life cycle events
+#  BeforeInstall:
+#    - location: docker.sh
+#      timeout: 300
 #  BeforeInstall:
 #    - location: scripts/before_install.sh
 #      timeout: 300
