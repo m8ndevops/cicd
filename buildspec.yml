@@ -30,5 +30,6 @@ artifacts:
     files: 
       - 'imagedefinitions.json'
       - 'docker/docker-compose.yml'
+      - 'docker/docker-compose.yml.bak'
       - 'appspec.yml'
       - 'docker.sh'
