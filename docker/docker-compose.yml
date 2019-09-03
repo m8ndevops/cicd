@@ -2,6 +2,6 @@ version: '3'
 services:
   web:
     container_name: nginx
-    image: 173437313385.dkr.ecr.ap-south-1.amazonaws.com/test:latest
+    image: $REPO:$TAG
     ports:
       - 80:80
