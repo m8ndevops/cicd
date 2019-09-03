@@ -26,8 +26,6 @@ phases:
       - printf '[{"name":"test","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
       - cat imagedefinitions.json
       - echo "export REPO=$REPOSITORY_URI\nexport TAG=$IMAGE_TAG" > docker/env.sh
-      - sed -i "4d" | sed "4i\\$REPOSITORY_URI:$IMAGE_TAG" docker.sh
-      - sed -i "5d" | sed "5i\\$REPOSITORY_URI:$IMAGE_TAG" | sed  "5 s/^/    /" docker/docker-compose.yml.bak
 artifacts:
     files: 
       - 'imagedefinitions.json'
