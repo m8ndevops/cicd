@@ -26,18 +26,21 @@ phases:
       - printf '[{"name":"test","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
       - printf '[{"version":"3","services":{"web":{"container_name":"nginx","image":"%s","ports":["80:80"]}}}]' $REPOSITORY_URI:$IMAGE_TAG > image.json
       - cat imagedefinitions.json
-      - echo "version:" "'3'" > docker/docker-compose.yml
-      - echo "services:" >> docker/docker-compose.yml
-      - echo "  web:" >> docker/docker-compose.yml
-      - echo "    container_name:" "nginx" >> docker/docker-compose.yml
-      - echo "    image:" "$REPOSITORY_URI:$IMAGE_TAG" >> docker/docker-compose.yml
-      - echo "    ports:" >> docker/docker-compose.yml
-      - echo "      - 80:80" >> docker/docker-compose.yml
+      - echo "export REPO=$REPOSITORY_URI:$IMAGE_TAG" > docker/env.sh
+      - #echo "version:" "'3'" > docker/docker-compose.yml
+      - #echo "services:" >> docker/docker-compose.yml
+      - #echo "  web:" >> docker/docker-compose.yml
+      - #echo "    container_name:" "nginx" >> docker/docker-compose.yml
+      - #echo "    image:" "$REPOSITORY_URI:$IMAGE_TAG" >> docker/docker-compose.yml
+      - #echo "    ports:" >> docker/docker-compose.yml
+      - #echo "      - 80:80" >> docker/docker-compose.yml
 
 artifacts:
     files: 
       - 'imagedefinitions.json'
       - 'image.json'
       - 'docker/docker-compose.yml'
+      - 'docker/env.sh'
       - 'appspec.yml'
       - 'docker.sh'
+      - 'environment.sh'

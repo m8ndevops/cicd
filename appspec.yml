@@ -8,13 +8,15 @@ os: linux
 #  - source: docker/docker-compose.yml
 #    destination: /home/ubuntu
 files:
+  - source: ./docker/env.sh
+    destination: /home/ubuntu 
   - source: ./docker/docker-compose.yml
     destination: /home/ubuntu
 hooks: # Deploy life cycle events
-#  BeforeInstall:
-#    - location: docker.sh
-#      timeout: 300
-#      runas: ubuntu
+  BeforeInstall:
+    - location: environment.sh
+      timeout: 300
+      runas: ubuntu
   AfterInstall:
     - location: docker.sh
       timeout: 300
