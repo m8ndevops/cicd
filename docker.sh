@@ -5,7 +5,6 @@ cd /home/ubuntu
 pwd
 sudo chmod 755 env.sh
 . ./env.sh
-docker pull $REPO:$TAG
+docker pull $REPO
 docker-compose up -d
 unset REPO
-unset TAG

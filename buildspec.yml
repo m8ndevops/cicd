@@ -24,8 +24,9 @@ phases:
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo Writing image definitions file...
       - printf '[{"name":"test","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
-      - cat imagedefinitions.json
-      - echo "export REPO=$REPOSITORY_URI\nexport TAG=$IMAGE_TAG" > docker/env.sh
+      - cat imagedefinitions.json 
+      - echo "export REPO=$REPOSITORY_URI:$IMAGE_TAG" > docker/env.sh
+
 artifacts:
     files: 
       - 'imagedefinitions.json'
