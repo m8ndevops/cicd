@@ -13,10 +13,10 @@ files:
   - source: ./docker/env.sh
     destination: /home/ubuntu
 hooks: # Deploy life cycle events
-#  BeforeInstall:
-#    - location: docker.sh
-#      timeout: 300
-#      runas: ubuntu
+  BeforeInstall:
+    - location: docker.sh
+      timeout: 300
+      runas: ubuntu
 #  BeforeInstall:
 #    - location: scripts/before_install.sh
 #      timeout: 300
