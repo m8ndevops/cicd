@@ -24,12 +24,14 @@ phases:
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo Writing image definitions file...
       - printf '[{"name":"test","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+      - printf '[{"version":"3","services":{"web":{"container_name":"nginx","image":"%s","ports":["80:80"]}}}]' $REPOSITORY_URI:$IMAGE_TAG > image.json
       - cat imagedefinitions.json 
       - echo "export REPO=$REPOSITORY_URI:$IMAGE_TAG" > docker/env.sh
 
 artifacts:
     files: 
       - 'imagedefinitions.json'
+      - 'image.json'
       - 'docker/docker-compose.yml'
       - 'docker/env.sh'
       - 'appspec.yml'
