@@ -26,7 +26,14 @@ phases:
       - printf '[{"name":"test","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
       - printf '[{"version":"3","services":{"web":{"container_name":"nginx","image":"%s","ports":["80:80"]}}}]' $REPOSITORY_URI:$IMAGE_TAG > image.json
       - cat imagedefinitions.json 
-      - echo "export REPO=$REPOSITORY_URI:$IMAGE_TAG" > docker/env.sh
+      - echo "docker pull $REPOSITORY_URI:$IMAGE_TAG" > docker/env.sh
+      - echo "version:" "'3'" > docker/docker.yml
+      - echo "services:" >> docker/docker.yml
+      - echo "  web:" >> docker/docker.yml
+      - echo "    container_name:" "nginx" >> docker/docker.yml
+      - echo "    image:" "$REPOSITORY_URI:$IMAGE_TAG" >> docker/docker.yml
+      - echo "    ports:" >> docker/docker.yml
+      - echo "      - 80:80" >> docker/docker.yml
 
 artifacts:
     files: 
@@ -34,5 +41,6 @@ artifacts:
       - 'image.json'
       - 'docker/docker-compose.yml'
       - 'docker/env.sh'
+      - 'docker/docker.yml'
       - 'appspec.yml'
       - 'docker.sh'

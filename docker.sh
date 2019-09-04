@@ -2,6 +2,5 @@
 pwd
 $(aws ecr get-login --no-include-email)
 cd /home/ubuntu
-docker pull $REPO
-docker-compose up -d
-unset REPO
+sudo chmod 755 env.sh
+./env.sh

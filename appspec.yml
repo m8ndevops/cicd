@@ -10,7 +10,7 @@ os: linux
 files:
   - source: ./docker/docker-compose.yml
     destination: /home/ubuntu
-  - source: ./image.json
+  - source: ./docker/docker.yml
     destination: /home/ubuntu
 hooks: # Deploy life cycle events
 #  BeforeInstall:
