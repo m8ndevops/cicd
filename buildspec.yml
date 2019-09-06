@@ -44,3 +44,4 @@ artifacts:
       - 'appspec.yml'
       - 'docker.sh'
       - 'environment.sh'
+    name: demo-$(date +%Y-%m-%d)
